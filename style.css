@@ -461,36 +461,50 @@
         padding-top: 2.5rem;
         height: fit-content;
         background-color: transparent;
+        flex-direction: column;
     }
     .footerbox {
         background-color: transparent;
         padding: 0 2rem 0 0.75rem;
+        display: flex;
+        height: fit-content;
+        justify-content: space-between;
     }
     .footer-top {
         background-color: transparent;
         margin-top: 2rem;
         display: flex;
+        width: 100%;
+        flex-wrap: wrap;
         justify-content: space-between;
     }
     .footer-topcontent {
+        display: flex;
+        flex-wrap: wrap;
         background-color: transparent;
+        justify-content: space-between;
+        width: 80%;
     }
     .top-contentgroup {
         display: flex;
+        flex-wrap: wrap;
         background-color: transparent;
+        width: 100%;
+        justify-content: space-between;
+        flex-grow: 1;
     }
     .content-group {
         display: flex;
         flex-direction: column;
-        width: 10.5rem;
+        width: 20%;
         margin-right: 1.5rem;
         margin-bottom: 2rem;
         background-color: transparent;
         flex-wrap: wrap;
     }
-    .content-group p {
+    /* .content-group p {
         word-break: break-all;
-    }
+    } */
     .content-list {
         display: flex;
         flex-direction: column;
@@ -499,7 +513,7 @@
     .content-group ul {
         padding: 0;
         background-color: transparent;
-        word-break: break-word;
+        /* word-break: break-word; */
     }
     .content-list li {
         padding-bottom: 0.5rem;
@@ -524,10 +538,8 @@
         display: flex;
         background-color: transparent;
         width: 9rem;
-        height: 9rem;
-        flex-grow: 5;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content: flex-start;
         gap: 0.5rem;
         align-items: start;
         flex-wrap: wrap;
@@ -550,6 +562,7 @@
         opacity: 0.1; 
         border-width: 0.8;
         margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
         margin-left: 0.75rem;
         margin-right: 2rem;
     }
@@ -559,6 +572,7 @@
         justify-content: space-between;
         padding-top: 1rem;
         padding-bottom: 1.5rem;
+        padding-right: 2rem;
     }
     .bottom-content {
         display: flex;
@@ -579,13 +593,13 @@
     }
     .copyright {
         display: flex;
-        flex-direction: row-reverse;
+        justify-content: end;
         flex-grow: 1;
         padding: 0;
         font-size: 0.875rem;
         font-weight: 400;
         opacity: 0.8;
-        margin-right: 2rem;
+        padding-right: 2rem;
     }
 
 /* Style for music_player container */
@@ -716,9 +730,24 @@
         display: none;
     }
 }
-@media (max-width: 872px) {
+@media (max-width: 960px) {
     .btnappinstall {
         display: none;
+    }
+    .content-group {
+        width: 50%;
+        margin-right: 0;
+    }
+    .chead {
+        font-size: 1.25rem;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .copyright {
+        justify-content: start;
+        margin-left: 0.75rem;
     }
 }
 @media (min-width:1051px) and (max-width:1300px) {
@@ -728,8 +757,8 @@
         align-items: center;
     }
 }
-@media (max-width:872px) {
-    .chead {
-        font-size: 1.25rem;
+@media (max-width:720px) {
+    .content-group {
+        width: 100%;
     }
 }
