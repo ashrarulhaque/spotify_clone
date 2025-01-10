@@ -36,6 +36,25 @@
     <title>Spotify - Web Player: Music for everyone</title>
 </head>
 <body>
+    <div id="mobnavbox">
+        <div id="mobmenu">
+            <div class="mobnavbox">
+                <a href="#"><h3>Log in</h3></a>
+                <a href="#"><h3>Sign up</h3></a>
+                <a href="#"><h3>__</h3></a>
+            </div>
+            <ul class="mobnavlist">
+                <li><a href="#">Premium</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Download</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+            </ul>
+            <a class="closebtn" onclick="togglemenu()"> 
+                <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
     <div class="main">
         <div class="navbar">
             <div class="navlogo">
@@ -44,24 +63,30 @@
             <div class="nav-content">
                 <div class="navcenter-container">
                     <div class="navhome">
-                    <button class="btnhome"><i class="fa-solid fa-house" style="font-size: 1.5rem;"></i></button>
+                        <button class="btnhome"><i class="fa-solid fa-house" style="font-size: 1.5rem;"></i></button>
                     </div>
                     <div class="searchbox">
                         <label for="search-input" style="cursor: pointer; background-color: transparent;" class="btnsearch">
                             <i class="fa-solid fa-magnifying-glass" style="font-size: 1.5rem;"></i>
                         </label>
-                        <input type="text" id="search-input" placeholder="What do you want to play?">
-                        <div class="vl" style="opacity: 0.5;"></div>
-                        <button class="btnbrowse">
+                        <div class="inputbox">
+                            <input type="text" id="search-input" placeholder="What do you want to play?">
+                            <div class="vl" style="opacity: 0.5;"></div>
+                            <button class="btnbrowse">
                             <i class="fa-regular fa-folder-open" style="font-size: 1.5rem;"></i>
                         </button>
+                        </div>
                     </div>
                 </div>
                 <div class="navhero">
                     <button class="btnbadge btnexplore">Explore Premium</button>
+                    <button class="btnbadge btnopenapp">Open App</button>
                     <button class="btnappinstall"><i class="fa-regular fa-circle-down"></i> Install App</button>
                     <button class="btnnoti"><i class="fa-solid fa-bell" style="font-size: 1.3rem;"></i></button>
                     <button class="btnprofile"><i class="fa-solid fa-circle-user" style="font-size: 1.5rem;"></i></button>
+                    <a class="hamburger" onclick="togglemenu()"> 
+                        <i class="fa-solid fa-bars" style="font-size: 1.5rem;"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -399,23 +424,23 @@
             </div>
             <div class="controls">
                 <button>
-                    <img src="controls_icon1.png" alt="">
+                    <img src="./Homework/controls_icon1.png" alt="">
                 </button>
                 <button>
-                    <img src="controld_icon2.png" alt="">
+                    <img src="./Homework/controld_icon2.png" alt="">
                 </button>
                 <button>
-                    <img src="controls_icon3.png" alt="" style="height: 1rem;">
+                    <img src="./Homework/controls_icon3.png" alt="" style="height: 1rem;">
                 </button>
                 <button>
-                    <img src="controls_icon4.png" alt="" style="height: 1rem;">
+                    <img src="./Homework/controls_icon4.png" alt="" style="height: 1rem;">
                 </button>
                 <button>
-                    <img src="controls_icon5.png" alt="">
+                    <img src="./Homework/controls_icon5.png" alt="">
                 </button>
                 <input type="range" min="0" max="100" class="progress-bar" step="1">
                 <button>
-                    <img src="album_icon2.png" alt=""></button>
+                    <img src="./Homework/album_icon2.png" alt=""></button>
                 <button>
                     <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                 </button>
@@ -492,6 +517,12 @@
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
         });
+</script>
+<script>
+    function togglemenu() {
+        const mobmenu = document.querySelector('#mobnavbox');
+        mobmenu.classList.toggle('active');
+    }
 </script>
 </body>
 </html>
