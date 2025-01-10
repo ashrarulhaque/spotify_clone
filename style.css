@@ -885,5 +885,16 @@
         justify-content: center;
         align-items: center;
         padding-right: 1rem;
+        color: white;
+    }
+    .main-heading {
+        padding-left: 0.25rem;
+    }
+    .main-cards {
+        padding-left: 0.25rem;
+    }
+    body {
+        padding: 0;
+        padding-right: 0.5rem;
     }
 }
