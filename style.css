@@ -895,6 +895,9 @@
     }
     body {
         padding: 0;
-        padding-right: 0.5rem;
+    }
+    .main_content {
+        margin-left: 2px;
+        margin-right: 2px;
     }
 }
