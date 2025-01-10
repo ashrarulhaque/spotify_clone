@@ -43,6 +43,79 @@
 .main {
     display: flex;
     height: 100vh;
+    z-index: 10;
+}
+#mobnavbox {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #121212;
+    color: white;
+    position: fixed;
+    right: -100%;
+    display: flex;
+    visibility: hidden;
+    transition: 0.5s;
+}
+#mobnavbox.active {
+    visibility: visible;
+    right: 0%;
+}
+#mobmenu {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.mobnavbox, .mobnavlist {
+    padding-left: 1.5rem;
+}
+.mobnavbox a {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+.mobnavbox a>h3 {
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    transition: 0s;
+}
+.mobnavbox a>h3:hover {
+    opacity: 0.5;
+}
+.mobnavbox a>h3:active {
+    padding-left: 0;
+}
+.mobnavlist li {
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+}
+.mobnavlist li>a {
+    text-decoration: none;
+    padding-left: 0.5rem;
+    transition: 0s;
+}
+.mobnavlist li>a:hover {
+    opacity: 0.5;
+}
+.mobnavlist li>a:active {
+    padding-left: 0;
+}
+.closebtn {
+    position: absolute;
+    cursor: pointer;
+    top: 1rem;
+    right: 2rem;
+    transition: 0s;
+}
+.closebtn:hover {
+    opacity: 0.6;
+}
+.closebtn:active {
+    transform: scale(0.8);
 }
 /* Navigation bar section */
 .navbar {
@@ -89,6 +162,10 @@
         border-radius: 50%;
         border: none;
         background-color: #1f1f1f;
+    }
+    .inputbox {
+        display: flex;
+        background-color: transparent;
     }
     .searchbox {
         display: flex;
@@ -149,6 +226,9 @@
         width: fit-content;
         font-weight: bold;
     }
+    .btnopenapp {
+        display: none;
+    }
     .btnappinstall i {
         font-size: 1.3rem
     }
@@ -156,6 +236,18 @@
         animation: bell-ring 0.8s ease-in-out 1;
         transform: scale(1.04);
     }
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        transition: 0s;
+    }
+    .hamburger:hover {
+        opacity: 0.6;
+    }
+    .hamburger:active {
+        transform: scale(0.8);
+    }
+    
 /* sidebar section */
 .sidebar { 
     background-color: #1f1f1f;
@@ -749,6 +841,16 @@
         justify-content: start;
         margin-left: 0.75rem;
     }
+    .controls {
+        display: none;
+    }
+    .music_player {
+        justify-content: space-evenly;
+    }
+    .current-play {
+        flex-grow: 1;
+        justify-content: center;
+    }
 }
 @media (min-width:1051px) and (max-width:1300px) {
     .navcenter-container {
@@ -760,5 +862,28 @@
 @media (max-width:720px) {
     .content-group {
         width: 100%;
+    }
+    .navhome {
+        display: none;
+    }
+}
+@media (max-width:600px) {
+    .sidebar, .current-play, .inputbox, .btnnoti, .btnprofile {
+        display: none;
+    }
+    .navhero {
+        flex-grow: 0;
+    }
+    .player {
+        flex-grow: 1;
+    }
+    .btnopenapp {
+        display: initial;
+    }
+    .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 1rem;
     }
 }
